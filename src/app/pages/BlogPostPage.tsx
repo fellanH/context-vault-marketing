@@ -42,6 +42,7 @@ export function BlogPostPage() {
         title={post.title}
         description={post.description}
         canonical={`/blog/${post.slug}`}
+        image={`/og/blog-${post.slug}.png`}
       />
       <Button asChild variant="ghost" className="mb-4 px-0">
         <Link to="/blog">
