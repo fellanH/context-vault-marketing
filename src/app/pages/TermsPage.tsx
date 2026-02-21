@@ -6,6 +6,7 @@ import {
   Ban,
   Mail,
 } from "lucide-react";
+import { PageHead } from "../components/PageHead";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -70,6 +71,11 @@ const sections = [
 export function TermsPage() {
   return (
     <main>
+      <PageHead
+        title="Terms of Service"
+        description="Terms of Service for Context Vault — the persistent memory layer for AI agents."
+        canonical="/terms"
+      />
       <section className="mx-auto w-full max-w-3xl px-6 py-16 sm:py-20">
         <div className="space-y-3 mb-10 text-center">
           <Badge variant="outline">Terms of Service</Badge>

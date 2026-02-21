@@ -1,4 +1,5 @@
 import { Link, useParams } from "react-router";
+import { PageHead } from "../components/PageHead";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -37,6 +38,11 @@ export function BlogPostPage() {
 
   return (
     <main className="mx-auto w-full max-w-3xl px-6 py-14 sm:py-16">
+      <PageHead
+        title={post.title}
+        description={post.description}
+        canonical={`/blog/${post.slug}`}
+      />
       <Button asChild variant="ghost" className="mb-4 px-0">
         <Link to="/blog">
           <ArrowLeft className="size-4" />

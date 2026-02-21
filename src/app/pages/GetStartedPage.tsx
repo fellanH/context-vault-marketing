@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { PageHead } from "../components/PageHead";
 import { HardDrive, Cloud, Copy, Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -24,6 +25,11 @@ export function GetStartedPage() {
 
   return (
     <main>
+      <PageHead
+        title="Get Started — 2-Minute Setup"
+        description="Install Context Vault locally or connect to hosted. One MCP endpoint, persistent memory across Claude Code, Cursor, and Windsurf."
+        canonical="/get-started"
+      />
       <section className="mx-auto w-full max-w-3xl px-6 py-16 sm:py-20">
         <div className="text-center space-y-3 mb-10">
           <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">

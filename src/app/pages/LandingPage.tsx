@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { PageHead } from "../components/PageHead";
 import {
   ArrowRight,
   CheckCircle2,
@@ -83,6 +84,11 @@ export function LandingPage() {
 
   return (
     <main>
+      <PageHead
+        title="Persistent Memory for AI Agents"
+        description="Context Vault gives Claude, Cursor, and MCP-compatible AI tools persistent memory across sessions. Local-first, open-core, setup in under 5 minutes."
+        canonical="/"
+      />
       <section className="border-b border-border/70 bg-gradient-to-b from-muted/60 via-background to-background">
         <div className="mx-auto w-full max-w-6xl px-6 py-20 sm:py-24">
           <div className="mx-auto max-w-4xl text-center">

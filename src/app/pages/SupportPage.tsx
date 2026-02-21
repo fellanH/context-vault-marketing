@@ -6,6 +6,7 @@ import {
   ArrowRight,
   Github,
 } from "lucide-react";
+import { PageHead } from "../components/PageHead";
 import {
   Card,
   CardHeader,
@@ -64,6 +65,11 @@ const sections = [
 export function SupportPage() {
   return (
     <main>
+      <PageHead
+        title="Support"
+        description="Get help with Context Vault. Report bugs, request features, or browse documentation."
+        canonical="/support"
+      />
       <section className="mx-auto w-full max-w-3xl px-6 py-16 sm:py-20">
         <div className="space-y-3 mb-10 text-center">
           <Badge variant="outline">Support</Badge>

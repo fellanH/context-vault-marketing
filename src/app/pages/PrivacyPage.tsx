@@ -1,4 +1,5 @@
 import { Shield, Eye, ShieldOff, Trash2, ArrowRight } from "lucide-react";
+import { PageHead } from "../components/PageHead";
 import {
   Card,
   CardHeader,
@@ -48,6 +49,11 @@ const sections = [
 export function PrivacyPage() {
   return (
     <main>
+      <PageHead
+        title="Privacy Policy"
+        description="Context Vault is local-first. Your vault data stays on your machine. Read how we handle the minimal data we do store."
+        canonical="/privacy"
+      />
       <section className="mx-auto w-full max-w-3xl px-6 py-16 sm:py-20">
         <div className="space-y-3 mb-10 text-center">
           <Badge variant="outline">Privacy Policy</Badge>

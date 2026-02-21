@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { ArrowRight } from "lucide-react";
+import { PageHead } from "../components/PageHead";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,6 +15,11 @@ import { posts } from "../content/posts";
 export function BlogIndexPage() {
   return (
     <main className="mx-auto w-full max-w-6xl px-6 py-14 sm:py-16">
+      <PageHead
+        title="Blog — Guides for Persistent AI Memory"
+        description="Integration tutorials, architecture deep-dives, and playbooks for shipping persistent AI memory with Context Vault."
+        canonical="/blog"
+      />
       <div className="max-w-3xl">
         <Badge variant="outline">Blog</Badge>
         <h1 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
