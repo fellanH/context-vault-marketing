@@ -6,7 +6,8 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "vite build && vercel --prod"
   },
   "dependencies": {
     "@radix-ui/react-slot": "1.1.2",

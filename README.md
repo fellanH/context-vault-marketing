@@ -14,22 +14,67 @@ Standalone marketing website for Context Vault.
 - `/blog` - Blog index
 - `/blog/:slug` - Blog post detail
 
-## Local Development
+---
 
-From repo root:
+## Development & Deployment SOP
+
+### Local Development
 
 ```bash
 npm install
-npm run marketing:dev
+npm run dev
 ```
 
-Build:
+Build preview:
 
 ```bash
-npm run marketing:build
+npm run build
+npm run preview
 ```
 
-## App Link Target
+---
 
-- `VITE_APP_BASE_URL` (optional): if set, all app conversion links (for example `/register`) point to that origin.
-- Default is same-origin behavior (links stay relative).
+### Daily Deploy Workflow
+
+No CI pipelines. No secrets management. No waiting. Two steps:
+
+**Step 1 — Commit & push to GitHub (history/source of truth)**
+
+```bash
+git add <files>
+git commit -m "feat: ..."
+git push
+```
+
+**Step 2 — Deploy to Vercel**
+
+```bash
+npm run deploy
+```
+
+`npm run deploy` runs `vite build && vercel --prod` — builds locally and pushes
+the `dist/` output directly to Vercel production via the CLI.
+
+> Prerequisites: `vercel` CLI installed globally (`npm i -g vercel`) and linked
+> to the project (`vercel link`). Run once per machine; no ongoing secrets or
+> environment setup required.
+
+---
+
+### Environment Variables
+
+| Variable            | Purpose                                              | Where set                                           |
+| ------------------- | ---------------------------------------------------- | --------------------------------------------------- |
+| `VITE_APP_BASE_URL` | Base URL for app conversion links (e.g. `/register`) | `.env.local` (dev) / Vercel project settings (prod) |
+
+---
+
+### Vercel Configuration (`vercel.json`)
+
+| Setting          | Value                                            |
+| ---------------- | ------------------------------------------------ |
+| Output directory | `dist`                                           |
+| SPA fallback     | `/*` → `/index.html`                             |
+| API proxy        | `/api/*` → `https://api.context-vault.com/api/*` |
+| MCP proxy        | `/mcp` → `https://api.context-vault.com/mcp`     |
+| Asset cache      | `public, max-age=31536000, immutable`            |
