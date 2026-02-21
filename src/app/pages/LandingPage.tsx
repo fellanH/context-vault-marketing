@@ -1,14 +1,22 @@
 import { Link } from "react-router";
 import { PageHead } from "../components/PageHead";
+import { SectionTag } from "../components/SectionTag";
+import { TerminalMockup } from "../components/TerminalMockup";
 import {
   ArrowRight,
   CheckCircle2,
   FileCode2,
+  FileText,
+  GitFork,
+  Layers,
   Lock,
+  MessageSquare,
   Rocket,
   Search,
   Server,
+  ShieldCheck,
   Star,
+  Zap,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -90,7 +98,7 @@ export function LandingPage() {
         description="Context Vault gives Claude, Cursor, and MCP-compatible AI tools persistent memory across sessions. Local-first, open-core, setup in under 5 minutes."
         canonical="/"
       />
-      <section className="border-b border-border/70 bg-gradient-to-b from-muted/60 via-background to-background">
+      <section className="border-b border-border/70 bg-[url('/grid.svg')] bg-repeat bg-gradient-to-b from-muted/60 via-background to-background">
         <div className="mx-auto w-full max-w-6xl px-6 py-20 sm:py-24">
           <div className="mx-auto max-w-4xl text-center">
             <Badge variant="outline" className="mb-4">
@@ -152,6 +160,7 @@ export function LandingPage() {
 
       <section className="mx-auto w-full max-w-6xl px-6 py-14 sm:py-16">
         <div className="max-w-3xl">
+          <SectionTag icon={Zap} label="Core capabilities" />
           <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
             Stop re-explaining context every session
           </h2>
@@ -178,6 +187,7 @@ export function LandingPage() {
 
       <section className="mx-auto w-full max-w-6xl px-6 py-14 sm:py-16">
         <div className="max-w-3xl">
+          <SectionTag icon={Layers} label="How it connects" />
           <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
             What is MCP?
           </h2>
@@ -201,6 +211,7 @@ export function LandingPage() {
 
       <section className="border-y border-border/70 bg-muted/30">
         <div className="mx-auto w-full max-w-6xl px-6 py-14 sm:py-16">
+          <SectionTag icon={GitFork} label="Get started" />
           <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
             How it works
           </h2>
@@ -216,9 +227,9 @@ export function LandingPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <pre className="overflow-x-auto rounded-md border border-border/70 bg-background p-3 text-xs">
+                <TerminalMockup>
                   npm install -g context-vault{"\n"}context-vault setup
-                </pre>
+                </TerminalMockup>
               </CardContent>
             </Card>
             <Card>
@@ -232,9 +243,9 @@ export function LandingPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <pre className="overflow-x-auto rounded-md border border-border/70 bg-background p-3 text-xs">
+                <TerminalMockup>
                   save_context({"{"} kind: "insight", body: "..." {"}"})
-                </pre>
+                </TerminalMockup>
               </CardContent>
             </Card>
             <Card>
@@ -249,9 +260,9 @@ export function LandingPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <pre className="overflow-x-auto rounded-md border border-border/70 bg-background p-3 text-xs">
+                <TerminalMockup>
                   get_context({"{"} query: "database decisions", limit: 5 {"}"})
-                </pre>
+                </TerminalMockup>
               </CardContent>
             </Card>
           </div>
@@ -259,6 +270,7 @@ export function LandingPage() {
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-6 py-14 sm:py-16">
+        <SectionTag icon={ShieldCheck} label="Why Context Vault" />
         <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
           Common objections, answered
         </h2>
@@ -277,6 +289,7 @@ export function LandingPage() {
 
       <section className="border-y border-border/70 bg-muted/30">
         <div className="mx-auto w-full max-w-6xl px-6 py-14 sm:py-16">
+          <SectionTag icon={MessageSquare} label="Common questions" />
           <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
             Frequently asked questions
           </h2>
@@ -295,6 +308,7 @@ export function LandingPage() {
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-6 py-14 sm:py-16">
+        <SectionTag icon={FileText} label="From the blog" />
         <div className="flex items-center justify-between gap-3">
           <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
             Latest from the blog
