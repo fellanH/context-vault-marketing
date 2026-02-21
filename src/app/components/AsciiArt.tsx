@@ -16,6 +16,7 @@ export function AsciiArt({
   const [idx, setIdx] = React.useState(0);
   React.useEffect(() => {
     if (!frames || frames.length <= 1) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const t = setInterval(
       () => setIdx((i) => (i + 1) % frames.length),
       interval,

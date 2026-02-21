@@ -25,12 +25,14 @@ interface FAQSectionProps {
 
 function AccordionItem({ question, answer }: FAQItem) {
   const [open, setOpen] = React.useState(false);
+  const panelId = React.useId();
   return (
     <div className="border-b border-border last:border-b-0">
       <button
         className="flex w-full items-center justify-between py-4 text-left text-sm gap-4"
         onClick={() => setOpen(!open)}
         aria-expanded={open}
+        aria-controls={panelId}
       >
         <span className="font-medium text-foreground">{question}</span>
         <ChevronDown
@@ -40,11 +42,13 @@ function AccordionItem({ question, answer }: FAQItem) {
           )}
         />
       </button>
-      {open && (
-        <p className="pb-4 text-sm text-muted-foreground leading-relaxed">
-          {answer}
-        </p>
-      )}
+      <p
+        id={panelId}
+        hidden={!open}
+        className="pb-4 text-sm text-muted-foreground leading-relaxed"
+      >
+        {answer}
+      </p>
     </div>
   );
 }
