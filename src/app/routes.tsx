@@ -7,6 +7,7 @@ import { BlogPostPage } from "./pages/BlogPostPage";
 import { PrivacyPage } from "./pages/PrivacyPage";
 import { SupportPage } from "./pages/SupportPage";
 import { TermsPage } from "./pages/TermsPage";
+import { SectionsPage } from "./pages/SectionsPage";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ export const router = createBrowserRouter([
       { path: "privacy", Component: PrivacyPage },
       { path: "terms", Component: TermsPage },
       { path: "support", Component: SupportPage },
+      { path: "sections", Component: SectionsPage },
     ],
   },
 ]);

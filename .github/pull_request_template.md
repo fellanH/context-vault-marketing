@@ -5,4 +5,5 @@ Closes #[issue number]
 ## Screenshots (if visual)
 
 ## Tested on preview URL
+
 - [ ] Yes
