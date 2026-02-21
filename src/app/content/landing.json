@@ -2,8 +2,8 @@
   "hero": {
     "badge": "Free forever for local use",
     "badgeHref": "/register",
-    "heading": "Start building your AI memory bank.",
-    "accentWord": "AI memory",
+    "heading": "Persistent memory for Claude Code, Cursor, and Windsurf.",
+    "accentWord": "Persistent memory",
     "subtitle": "Context Vault gives Claude Code, Cursor, and Windsurf persistent memory. Save your decisions and context once, retrieved automatically when you start a new session.",
     "primaryCta": {
       "label": "Install now",
