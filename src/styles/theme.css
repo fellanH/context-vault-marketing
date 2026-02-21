@@ -204,3 +204,21 @@
     font-family: var(--font-mono);
   }
 }
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.dot-grid {
+  background-image: radial-gradient(
+    circle,
+    var(--border) 1.5px,
+    transparent 1.5px
+  );
+  background-size: 28px 28px;
+}
