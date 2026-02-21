@@ -221,14 +221,8 @@ export function LandingPage() {
         heading={hero.heading}
         accentWord={hero.accentWord}
         subtitle={hero.subtitle}
-        primaryCta={{
-          label: hero.primaryCta.label,
-          href: appHref(hero.primaryCta.href),
-        }}
-        secondaryCta={{
-          label: hero.secondaryCta.label,
-          href: hero.secondaryCta.href,
-        }}
+        quickStartCommand="npx context-vault setup"
+        installCommand="npm install -g context-vault"
         trustPoints={hero.trustPoints}
         leftPanelBadge={hero.leftPanelBadge}
         leftPanelLines={

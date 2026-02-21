@@ -1,4 +1,5 @@
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, CheckCircle2, Copy, Check } from "lucide-react";
 
 interface TerminalLine {
   text: string;
@@ -13,6 +14,8 @@ interface HeroSectionProps {
   subtitle?: string;
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
+  quickStartCommand?: string;
+  installCommand?: string;
   trustPoints?: string[];
   leftPanelBadge?: string;
   leftPanelLines?: TerminalLine[];
@@ -29,6 +32,8 @@ export function HeroSection({
   subtitle,
   primaryCta,
   secondaryCta,
+  quickStartCommand,
+  installCommand,
   trustPoints,
   leftPanelBadge = "[ terminal ]",
   leftPanelLines = [],
@@ -36,10 +41,19 @@ export function HeroSection({
   rightPanelLines = [],
   dotGrid = true,
 }: HeroSectionProps) {
+  const [copied, setCopied] = useState(false);
+
   const headingParts =
     accentWord && heading.includes(accentWord)
       ? heading.split(accentWord)
       : null;
+
+  function copyCommand() {
+    if (!quickStartCommand) return;
+    navigator.clipboard.writeText(quickStartCommand);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  }
 
   return (
     <section
@@ -101,27 +115,57 @@ export function HeroSection({
           </p>
         )}
 
-        {/* CTAs */}
-        {(primaryCta || secondaryCta) && (
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
-            {primaryCta && (
-              <a
-                href={primaryCta.href}
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity"
+        {/* Quick-start commands */}
+        {quickStartCommand ? (
+          <div className="mb-4 space-y-3">
+            <div className="inline-flex items-center gap-3 rounded-md border border-border/50 bg-zinc-950 px-4 py-2.5 text-sm font-mono">
+              <span className="text-zinc-500 select-none">$</span>
+              <span className="text-zinc-100">{quickStartCommand}</span>
+              <button
+                onClick={copyCommand}
+                aria-label="Copy command"
+                className="ml-1 text-zinc-500 hover:text-zinc-200 transition-colors"
               >
-                {primaryCta.label}
-                <ArrowRight className="size-4" />
-              </a>
-            )}
-            {secondaryCta && (
-              <a
-                href={secondaryCta.href}
-                className="inline-flex items-center justify-center gap-2 rounded-md border border-border px-5 py-2.5 text-sm font-medium hover:bg-muted/30 transition-colors"
-              >
-                {secondaryCta.label}
-              </a>
+                {copied ? (
+                  <Check className="size-3.5 text-green-400" />
+                ) : (
+                  <Copy className="size-3.5" />
+                )}
+              </button>
+            </div>
+
+            {installCommand && (
+              <p className="text-xs text-muted-foreground">
+                or, prefer permanent&nbsp;·&nbsp;
+                <code className="font-mono text-muted-foreground/80">
+                  {installCommand}
+                </code>
+              </p>
             )}
           </div>
+        ) : (
+          /* Fallback: original CTA buttons */
+          (primaryCta || secondaryCta) && (
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
+              {primaryCta && (
+                <a
+                  href={primaryCta.href}
+                  className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity"
+                >
+                  {primaryCta.label}
+                  <ArrowRight className="size-4" />
+                </a>
+              )}
+              {secondaryCta && (
+                <a
+                  href={secondaryCta.href}
+                  className="inline-flex items-center justify-center gap-2 rounded-md border border-border px-5 py-2.5 text-sm font-medium hover:bg-muted/30 transition-colors"
+                >
+                  {secondaryCta.label}
+                </a>
+              )}
+            </div>
+          )
         )}
 
         {/* Trust points */}
