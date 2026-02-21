@@ -159,7 +159,7 @@ export function HeroSection({
                 {rightPanelBadge}
               </span>
             </div>
-            <div className="bg-background p-4 min-h-[140px]">
+            <div className="bg-background p-4 min-h-[140px] text-left">
               {rightPanelLines.map((line, i) => (
                 <div
                   key={i}
