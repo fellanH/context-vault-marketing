@@ -10,7 +10,7 @@ const response = await favicons(source, {
   appName: "Context Vault",
   appShortName: "CV",
   appDescription: "Persistent Memory for AI Agents",
-  background: "#212121",
+  background: "#f8f8f8",
   theme_color: "#6d28d9",
   lang: "en",
   icons: {

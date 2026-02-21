@@ -1,13 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
-  <rect width="512" height="512" rx="96" fill="#6d28d9"/>
+  <rect width="512" height="512" rx="96" fill="#f8f8f8"/>
   <text
     x="256"
-    y="340"
+    y="360"
     font-family="Inter, system-ui, -apple-system, sans-serif"
-    font-size="256"
+    font-size="300"
     font-weight="700"
-    fill="#ffffff"
+    fill="#212121"
     text-anchor="middle"
-    letter-spacing="-8"
-  >CV</text>
+  >V</text>
 </svg>
