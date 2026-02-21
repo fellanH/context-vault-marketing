@@ -10,3 +10,13 @@ export function appHref(path: string) {
     ? `${normalizedBaseUrl}${normalizedPath}`
     : normalizedPath;
 }
+
+export function formatDate(isoDate: string): string {
+  const [year, month, day] = isoDate.split("-").map(Number);
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(Date.UTC(year, month - 1, day)));
+}

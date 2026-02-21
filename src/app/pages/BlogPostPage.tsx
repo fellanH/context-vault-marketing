@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { getPostBySlug } from "../content/posts";
-import { appHref } from "../lib/links";
+import { appHref, formatDate } from "../lib/links";
 
 export function BlogPostPage() {
   const { slug } = useParams();
@@ -54,7 +54,7 @@ export function BlogPostPage() {
         <header className="space-y-4">
           <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
             <Badge variant="secondary">{post.category}</Badge>
-            <span>{post.publishedAt}</span>
+            <span>{formatDate(post.publishedAt)}</span>
             <span>{post.readTimeMinutes} min read</span>
           </div>
           <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">

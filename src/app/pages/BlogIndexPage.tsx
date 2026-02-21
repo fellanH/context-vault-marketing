@@ -11,6 +11,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { posts } from "../content/posts";
+import { formatDate } from "../lib/links";
 
 export function BlogIndexPage() {
   return (
@@ -37,7 +38,7 @@ export function BlogIndexPage() {
             <CardHeader className="space-y-4">
               <div className="flex items-center gap-2 text-xs text-muted-foreground">
                 <Badge variant="secondary">{post.category}</Badge>
-                <span>{post.publishedAt}</span>
+                <span>{formatDate(post.publishedAt)}</span>
                 <span>{post.readTimeMinutes} min read</span>
               </div>
               <div>

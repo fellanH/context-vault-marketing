@@ -8,6 +8,7 @@ import {
   Rocket,
   Search,
   Server,
+  Star,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -20,7 +21,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { posts } from "../content/posts";
-import { appHref } from "../lib/links";
+import { appHref, formatDate } from "../lib/links";
 
 const proof = [
   { label: "Install time", value: "< 5 min" },
@@ -112,6 +113,28 @@ export function LandingPage() {
                 <Link to="/get-started">See 2-minute setup</Link>
               </Button>
             </div>
+
+            <div className="mt-8 flex flex-col items-center gap-3">
+              <p className="text-xs text-muted-foreground">Works with</p>
+              <div className="flex flex-wrap justify-center gap-2">
+                {["Claude Code", "Cursor", "Windsurf", "Zed", "ChatGPT"].map(
+                  (tool) => (
+                    <Badge key={tool} variant="secondary" className="text-xs">
+                      {tool}
+                    </Badge>
+                  ),
+                )}
+              </div>
+              <a
+                href="https://github.com/fellanH/context-vault"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1 flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
+              >
+                <Star className="size-3" />
+                Open-source on GitHub
+              </a>
+            </div>
           </div>
 
           <div className="mt-10 grid gap-3 sm:grid-cols-3">
@@ -150,6 +173,29 @@ export function LandingPage() {
               <CardFooter />
             </Card>
           ))}
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-6xl px-6 py-14 sm:py-16">
+        <div className="max-w-3xl">
+          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+            What is MCP?
+          </h2>
+          <p className="mt-3 text-muted-foreground">
+            MCP (Model Context Protocol) is an open standard that lets AI tools
+            like Claude Code and Cursor connect to external data sources.
+            Context Vault implements MCP to give your AI a persistent,
+            searchable memory layer.
+          </p>
+          <Button asChild variant="link" className="mt-2 px-0">
+            <a
+              href="https://modelcontextprotocol.io"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Learn about MCP <ArrowRight className="size-4" />
+            </a>
+          </Button>
         </div>
       </section>
 
@@ -263,6 +309,7 @@ export function LandingPage() {
               <CardHeader>
                 <div className="flex items-center gap-2 text-xs text-muted-foreground">
                   <Badge variant="secondary">{post.category}</Badge>
+                  <span>{formatDate(post.publishedAt)}</span>
                   <span>{post.readTimeMinutes} min read</span>
                 </div>
                 <CardTitle className="text-base">
