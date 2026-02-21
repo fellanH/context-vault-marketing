@@ -20,6 +20,8 @@ export function GetStartedPage() {
     await navigator.clipboard.writeText(command);
     setCopiedIdx(idx);
     setTimeout(() => setCopiedIdx(null), 2000);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (window as any).dataLayer?.push({ event: "copy_command" });
   };
 
   return (
