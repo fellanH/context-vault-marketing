@@ -200,6 +200,20 @@ vite build
 
 Deployment always happens from the local CLI, never from CI.
 
+### Release Tagging
+
+Create a GitHub release for significant site milestones (major new sections, launch events,
+or when CLI install instructions change). Use a date-based tag, not semver:
+
+```bash
+gh release create 2026-03-20 \
+  --title "March 2026 — Product Hunt launch" \
+  --notes "Added analytics stack, email capture form, and Product Hunt assets."
+```
+
+Do NOT create a release for every deploy. Reserve tags for events worth linking to
+in retrospectives or changelogs.
+
 ---
 
 ## 4. Social Media

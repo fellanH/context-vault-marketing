@@ -1,7 +1,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --font-size: 14px;
+  --font-size: clamp(14px, 0.5vw + 12px, 17px);
   --font-mono: "JetBrains Mono", "Courier New", monospace;
   --background: #f8f8f8;
   --foreground: #212121;
@@ -47,6 +47,9 @@
   --brand: oklch(0.55 0.22 285);
   --brand-muted: oklch(0.97 0.02 285);
   --brand-foreground: oklch(0.98 0.005 285);
+  /* Fluid display text — override Tailwind defaults */
+  --text-3xl: clamp(1.875rem, 2.5vw + 0.75rem, 2.75rem);
+  --text-4xl: clamp(2.25rem, 3.5vw + 0.75rem, 3.5rem);
 }
 
 .dark {
