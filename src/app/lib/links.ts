@@ -1,5 +1,5 @@
 const rawBaseUrl = import.meta.env.VITE_APP_BASE_URL || "";
-const normalizedBaseUrl = rawBaseUrl.replace(/\/+$/, "");
+const normalizedBaseUrl = rawBaseUrl.trim().replace(/\/+$/, "");
 
 export const docsQuickstartUrl =
   "https://github.com/fellanH/context-vault/blob/main/docs/distribution/connect-in-2-minutes.md";
