@@ -2,8 +2,8 @@
   "hero": {
     "badge": "Open source, runs locally",
     "badgeHref": "",
-    "heading": "Start your AI Memory bank with one command.",
-    "accentWord": "AI Memory bank",
+    "heading": "AI Memory Storage.",
+    "accentWord": "AI Memory",
     "subtitle": "Stop re-explaining your project to every AI tool. Save decisions, patterns, and context once — retrieved automatically via MCP. Plain markdown files, zero vendor lock-in, fully open source.",
     "primaryCta": {
       "label": "Install now",
