@@ -2,7 +2,7 @@
   "hero": {
     "badge": "Free forever for local use",
     "badgeHref": "/register",
-    "heading": "MCP for private AI memory storage.",
+    "heading": "Give AI memory via MCP.",
     "accentWord": "AI memory",
     "subtitle": "Stop re-explaining your project to every AI tool. Save decisions, patterns, and context once — retrieved automatically via MCP. Plain markdown files, zero vendor lock-in, fully open source.",
     "primaryCta": {
