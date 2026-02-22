@@ -2,8 +2,8 @@
   "hero": {
     "badge": "Free forever for local use",
     "badgeHref": "/register",
-    "heading": "Save context across all your AI tools. Local, human-readable, always yours.",
-    "accentWord": "local, human-readable, always yours",
+    "heading": "Persistent memory across all your AI tools.",
+    "accentWord": "Persistent memory",
     "subtitle": "Stop re-explaining your project to every AI tool. Save decisions, patterns, and context once — retrieved automatically via MCP. Plain markdown files, zero vendor lock-in, fully open source.",
     "primaryCta": {
       "label": "Install now",
