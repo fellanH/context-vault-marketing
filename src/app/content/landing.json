@@ -2,9 +2,9 @@
   "hero": {
     "badge": "Open source, runs locally",
     "badgeHref": "",
-    "heading": "AI Memory Storage.",
-    "accentWord": "AI Memory",
-    "subtitle": "Stop re-explaining your project to every AI tool. Save decisions, patterns, and context once — retrieved automatically via MCP. Plain markdown files, zero vendor lock-in, fully open source.",
+    "heading": "Persistent AI memory via MCP.",
+    "accentWord": "AI memory",
+    "subtitle": "Every session picks up where you left off. Save decisions, patterns, and context once — retrieved automatically via MCP. Plain markdown files, zero vendor lock-in, fully open source.",
     "primaryCta": {
       "label": "Install now",
       "href": "/get-started"
